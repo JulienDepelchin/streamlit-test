@@ -41,3 +41,10 @@ fig.show()
 
 
 st.plotly_chart(fig2, use_container_width=True)
+
+
+Host_Country2 = st.selectbox('Sélectionnez un continent:', ('US.', 'Japan.', 'Europe.'), key = 2)
+
+fig3 = px.histogram(df_cars[df_cars["continent"].str.contains(f"{Host_Country2}")], x="cylinders")
+fig3.show()
+st.plotly_chart(fig3, use_container_width=True)
